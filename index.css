@@ -112,7 +112,7 @@ nav ul li a:hover{
     margin-top: 20px;
 }
 
-.home_photo, .sharpen_components, .lessonlearned {
+.home_photo, .sharpen_components{
     float: right;
     padding-left: 20px;
 }
