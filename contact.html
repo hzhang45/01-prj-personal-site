@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Me</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <nav>
+                    <div class="logo_div">
+                        <h1 class="logo_style">Hanwen Zhang</h1>
+                    </div>
+
+                    <ul class="nav_list">
+                        <li class="nav_list_item"><a href="index.html">Home</a></li>
+                        <li class="nav_list_item"><a href="projects.html">Project Sharpen</a></li>
+                        <li class="nav_list_item"><a href="other_art.html">Other Art</a></li>
+                        <li class="nav_list_item"><a href="lesssonlearned.html">Lesson Learned</a></li>
+                        <li class="nav_list_item"><a href="contact.html">Contact Me</a></li>
+                    </ul>
+
+                    <div class="hamburger_menu">
+                        <img src="Images/hamburger-menu copy.svg">
+                        <ul class="nav_list_hamburger_menu">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="projects.html">Project Sharpen</a></li>
+                            <li><a href="other_art.html">Other Art</a></li>
+                            <li><a href="lesssonlearned.html">Lesson Learned</a></li>
+                            <li><a href="contact.html">Contact Me</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <form class=form name="submit-to-google-sheet" action="#">
+                <p>My Email: ineedalotofmilk@gmail.com</p>
+                <p>My Number: 571-525-0820</p>
+                <div>
+                    <lable for="form_name">Name:</lable>
+                    <input name="name" id="form_name" value="Your Name" required>
+                </div>
+                <br>
+                <div>
+                    <lable for="form_email">Email:</lable>
+                    <input name="email" id="form_email" value="Your Email" required>
+                </div>
+                <br>
+                <div>
+                    <lable for="form_phone">Phone:</lable>
+                    <input name="phone" id="form_phone" value="Your Phone">
+                </div>
+                <br>
+                <div>
+                    <lable for="form_drop">Are you an art student?</lable>
+                    <select name="dropdown" id="form_drop">
+                        <option value="-">-</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <lable for="form_textarea">Your Message:</lable>
+                    <textarea id="form_textarea" name="textarea"></textarea>
+                </div>
+                <br>
+                <input class=submitreset type="submit" value="Submit">
+                <input class=submitreset type="reset" value="Reset">
+            </form>
+            <span id="msg"></span>
+            <script>
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxmbd8cDU_CuN1S8RuvcVF6ec_TkWqR059JWIFTO4dLgcV1X2H2AOGkD48W9Iu5Q7henw/exec'
+                const form = document.forms['submit-to-google-sheet']
+                const msg = document.getElementById("msg")
+              
+                form.addEventListener('submit', e => {
+                  e.preventDefault()
+                  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                    .then(response => {
+                        msg.innerHTML = "Your form has been submitted succesfully"
+                        setTimeout(function(){
+                            msg.innerHTML = ""
+                        }, 5000)
+                        form.reset()
+                    })
+                    .catch(error => console.error('Error!', error.message))
+                })
+              </script>
+        </main>
+        <footer>
+            <footer>
+                <p>&copy; Hanwen Zhang</p>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="Images/facebook-logo copy.png">
+                </a>
+                <a href="https://www.twitter.com" target="_blank">
+                    <img src="Images/twitter-logo copy.png">
+                </a>
+            </footer>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,187 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+* {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+header{
+    background-color: bisque;
+}
+
+.container {
+    padding: 10px 5%;
+}
+
+nav {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo_style {
+    font-size: xx-large;
+	display: grid;
+	color: white;
+	font-family: "Henny Penny", cursive;
+    text-shadow: 0 1px darkcyan;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 5px 20px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover{
+    color:bisque;
+    font-weight: bolder;
+}
+
+.hamburger_menu {
+    position: absolute;
+    display: none;
+}
+
+.nav_list_hamburger_menu {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    .nav_list{
+        display: none;
+    }
+
+    .hamburger_menu {
+        display: block;
+        right: 20px;
+        top: 40px;
+        width: 150px;
+    }
+
+    .hamburger_menu img {
+        width: 50px;
+    }
+
+    .hamburger_menu:hover {
+        cursor: pointer;
+    }
+
+    .hamburger_menu:hover .nav_list_hamburger_menu {
+        display: block;
+        list-style-type: none;
+    }
+
+    .nav_list_hamburger_menu li {
+        border-top: 1px solid bisque;
+        color: white;
+        margin-top: 6px;
+        padding-top: 10px;
+    }
+
+    .nav_list_hamburger_menu a {
+        color: white;
+    }
+
+    .nav_list_hamburger_menu li a:hover {
+        color: bisque;
+        font-weight: bolder;
+    }
+}
+
+.homepage_text{
+    margin-top: 5%;
+    font-size: 30px;
+    padding: 10px 5%;
+}
+
+.homepage_text h1,h3{
+    color:bisque;
+}
+
+.homepage_text p{
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.home_photo, .sharpen_components, .lessonlearned {
+    float: right;
+    padding-left: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.art_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 16px;
+    row-gap: 40px;
+}
+
+.artwork, .sharpen_banner, .sharpen_components, .cards{
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
+
+.artwork_title, .art_medium {
+    margin-top:0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+.projectpage_text{
+    margin-top: 5%;
+    padding: 10px 5%;
+}
+
+.projectpage_text h1, h2, h3{
+    color:bisque;
+}
+
+.sharpen_components_list li{
+    margin-bottom: 10px;
+}
+
+form input, form textarea, form select{
+    border: 0;
+    outline: bisque;
+    background: lightslategray;
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+.submitreset {
+    background: lightslategray;
+}
+
+.submitreset:hover {
+    color: black;
+    background: bisque;
+}
+
+.form {
+    margin-left: 40px;
+}
+
+#msg {
+    color: bisque;
+    margin-top: -10px;
+    display: block;
+}
